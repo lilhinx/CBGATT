@@ -7,7 +7,7 @@
 
 import CoreBluetooth
 
-protocol ServiceDefinition:CaseIterable,CustomStringConvertible
+public protocol ServiceDefinition:CaseIterable,CustomStringConvertible
 {
     var service:CBUUID{ get }
     var characteristics:Set<CBUUID>{ get }
