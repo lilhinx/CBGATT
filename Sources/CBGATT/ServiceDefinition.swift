@@ -9,6 +9,7 @@ import CoreBluetooth
 
 public protocol ServiceDefinition:RawRepresentable,CaseIterable,CustomStringConvertible
 {
+    associatedtype RawValue = String
     var service:CBUUID{ get }
     var characteristics:Set<CBUUID>{ get }
 }
