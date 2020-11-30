@@ -15,7 +15,7 @@ public protocol ServiceDefinition:CaseIterable,CustomStringConvertible
 
 extension ServiceDefinition
 {
-    static var allServices:[CBUUID]
+    public static var allServices:[CBUUID]
     {
         return allCases.map( { $0.service } )
     }

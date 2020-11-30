@@ -12,3 +12,12 @@ public protocol CharacteristicDefinition:CaseIterable,CustomStringConvertible
     var characteristic:CBUUID{ get }
     func model( with data:Data )->CharacteristicModel
 }
+
+
+extension CharacteristicDefinition
+{
+    public static var allCharacteristics:[CBUUID]
+    {
+        return allCases.map( { $0.characteristic } )
+    }
+}
