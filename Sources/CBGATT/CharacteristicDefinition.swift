@@ -12,8 +12,6 @@ public protocol CharacteristicDefinition:RawRepresentable,CaseIterable,CustomStr
     associatedtype RawValue = String
     var characteristic:CBUUID{ get }
     func model( with data:Data )->CharacteristicModel
-    var shouldRead:Bool{ get }
-    var shouldNotify:Bool{ get }
 }
 
 
