@@ -39,6 +39,16 @@ enum FakeCharacteristics:String,CharacteristicDefinition
     {
         fatalError( )
     }
+    
+    var shouldRead:Bool
+    {
+        return true
+    }
+    
+    var shouldNotify:Bool
+    {
+        return true
+    }
 }
 
 
