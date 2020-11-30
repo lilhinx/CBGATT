@@ -7,10 +7,8 @@
 
 import CoreBluetooth
 
-public protocol ServiceDefinition:RawRepresentable,CaseIterable,CustomStringConvertible
+public protocol ServiceDefinition:RawRepresentable,CaseIterable,CustomStringConvertible where RawValue == String
 {
-    associatedtype RawValue = String
-    var service:CBUUID{ get }
     var characteristics:Set<CBUUID>{ get }
 }
 
@@ -19,5 +17,10 @@ extension ServiceDefinition
     public static var allServices:[CBUUID]
     {
         return allCases.map( { $0.service } )
+    }
+    
+    public var service:CBUUID
+    {
+        return CBUUID.init( string:rawValue )
     }
 }
