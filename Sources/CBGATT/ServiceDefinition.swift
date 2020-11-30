@@ -7,7 +7,7 @@
 
 import CoreBluetooth
 
-public protocol ServiceDefinition:RawRepresentable,CaseIterable,CustomStringConvertible where RawValue == String
+public protocol ServiceDefinition:RawRepresentable,CaseIterable,CustomStringConvertible,Hashable where RawValue == String
 {
     var characteristics:Set<CBUUID>{ get }
 }
