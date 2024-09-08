@@ -10,6 +10,8 @@ import CoreBluetooth
 
 public struct ExampleService:ServiceDefinition
 {
+	public init( ){ }
+	
 	public static let id:CBUUID = CBUUID.init( nsuuid:.init( uuidString:"448DF4C0-95C0-421C-8497-1A6CC5003C45" )! )
 	
 	public struct NestedService:ServiceDefinition
