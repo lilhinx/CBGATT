@@ -10,7 +10,7 @@ import CoreBluetooth
 public protocol CharacteristicDefinition
 {
 	static var id:CBUUID{ get }
-	associatedtype Value:Codable
+    associatedtype Value:Decodable
 }
 
 
