@@ -7,12 +7,21 @@
 
 import CoreBluetooth
 
-public protocol CharacteristicDefinition
+public protocol CharacteristicDefinition:CustomStringConvertible
 {
 	static var id:CBUUID{ get }
     associatedtype Value:Decodable
 }
 
-
-
-
+extension CharacteristicDefinition
+{
+    public var id:CBUUID
+    {
+        return Self.id
+    }
+    
+    func getValueType( ) ->Value.Type
+    {
+        return Value.self
+    }
+}
